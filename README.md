@@ -16,13 +16,15 @@ And the function calls will perform the following behavior:
   * range([0, 9, 3, 2, -1]) --> 10
   * currentDate() --> "10/20" (return string)
 
+Before anything, first create a new repository on GitHub & then initialize it from your terminal via `git clone [GitHub Repo URL]`. Then, `cd` into that folder & open it from VSCode (or your preferred IDE.)
+
 We'll do so in the following steps:
 
 1. Create a new file called `Assets.js` and implement the `capitalize(...)` function, described above.
 2. In your terminal, type `git status`. This will show which files have been modified / created since the last commit.
 3. Add the changes locally on your machine by type `git add`. This essentially tracks and picks on the changes you have made since the last commit.
-4. To prepare to push the changes to our remote repository, type, `git commit -m "Implement capitalize function"`. This takes the changes we've tracked locally and gets ready to push them to our remote repository.
-5. Finally, type `git push origin main`, which will now push these local changes to the `main` branch on our remote repository.
+4. To prepare to push the changes to our remote repository, type, `git commit -m "Implement capitalize function"`. This takes the changes we've tracked locally and gets ready to push them to our remote repository. Also type `git branch -M main` to establish an explicit connection between the local and remote `main` branches (note: only have to do this part once.)
+5. Finally, type `git push -u origin main`, which will now push these local changes to the `main` branch on our remote repository.
 6. Implement the function `range(...)` in the `Assets.js` file & repeat steps 3-5 (with an appropriate commit message).
 
 Next, we'll practice using branches, which we just discussed on the slides. Suppose we want our final function `currentDate(...)` to go in a separate file called `Date.js` as our previous two functions. This function will be used in separate parts of our application than the previous two functions, so we want to create a different branch for the sake of [modularity](https://www.geeksforgeeks.org/modular-approach-in-programming/).
@@ -30,3 +32,11 @@ Next, we'll practice using branches, which we just discussed on the slides. Supp
 7. First, create a new local branch called `dateTime` by typing `git branch dateTime main`. This create a new `dateTime` branch off of our `main` branch.
 8. Implement the `currentDate(...)` function in the `Date.js` file and repeat steps 3 and 4 (again, with an appropriate commit message).
 9. Now, when you're ready to push, instead of pushing to the remote `main` branch, we want to push to a new remote branch called `dateTime`, which we can do via: `git push -u origin dateTime`.
+
+When you're done, your commit history on GitHub should look this this for the `main` and `dateTime` branches, respectively:
+
+![main branch](./main.png)
+
+![dateTime branch](./dateTime.png)
+
+And that's a super quick intro to Git!
